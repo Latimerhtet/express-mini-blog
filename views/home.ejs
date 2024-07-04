@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <h2 class="title">This is home page</h2>
+    <p class="paragraph">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni illum
+      error libero delectus, minus quasi voluptas? Quam non molestiae distinctio
+      aperiam corrupti quis cum ab quibusdam dolor sit, ipsa obcaecati.
+    </p>
+    <a class="redirectNewPost" href="/admin/addPost">Create new Post</a>
+    <h1>Posts</h1>
+    <% if(postsArray.length === 0) { %>
+    <div class="postBox">
+      <div>
+        <p>There is no posts to see</p>
+        <p>You can start create your own post!!</p>
+      </div>
+      <a class="redirectNewPost" href="/admin/addPost">Create new Post</a>
+    </div>
+    <% } %> <% for(let post of postsArray) { %>
+    <div class="postBox">
+      <h3><%= post.title %></h3>
+      <a href="/post/<%= post.id %>">See more</a>
+    </div>
+    <% } %>
+  </body>
+</html>
