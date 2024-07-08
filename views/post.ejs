@@ -8,8 +8,14 @@
   </head>
   <body>
     <h2 class="title"><%= targetPost.title %></h2>
-    <img src="<%= targetPost.image %>" alt="postimage" />
+    <img src="<%= targetPost.image_url %>" alt="postimage" />
     <p class="paragraph"><%= targetPost.description %></p>
-    <a href="/">Back</a>
+    <div class="btn-div">
+      <a href="/">Back</a>
+      <form action="/admin/post/<%= targetPost.id %>" method="post">
+        <button>Delete Post</button>
+      </form>
+      <a href="/admin/editPost/<%= targetPost.id %>">Edit Post</a>
+    </div>
   </body>
 </html>
